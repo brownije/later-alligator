@@ -76,7 +76,7 @@ export default function App() {
   const addInterval = useCallback(() => {
     const n = parseFloat(newAmount)
     if (!newAmount || isNaN(n)) return
-    setIntervals(prev => [...prev, { id: nextId++, amount: n, unit: newUnit }])
+    setIntervals(prev => [{ id: nextId++, amount: n, unit: newUnit }, ...prev])
     setNewAmount('')
   }, [newAmount, newUnit])
 
